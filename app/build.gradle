@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'   //申请插件 com.android.appliaction
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion   //编译版本
+    buildToolsVersion rootProject.ext.buildToolsVersion   //构建版本 本地安装的版本
+    defaultConfig {
+        applicationId "com.example.fujindong.gradleintroduce"  //包名
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false   //是否混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' //混淆文件位置
+        }
+    }
+}
+
+
+//依赖包的版本 统一定义在build.gradle 中 如果有多个模块 也方便管理 提高可读性
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    testCompile "junit:junit:$rootProject.junitVersion"
+}
