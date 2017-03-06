@@ -16,3 +16,9 @@ include ':app'
 *  org.gradle.parallel = true //如果你的项目没有时序要求，打开这个选项可以并发处理多个任务，充分利用硬件资源。
 *  org.gradle.daemon = true //守护进程可以使编译的时间大大缩短
 * org.gradle.jvmargs=-Xms256m -Xmx1024m  //Gradle是运行在java虚拟机上的，这个指定了这个虚拟机的堆内存初始化为256M 最大为1G
+
+##创建子模块
+
+* 右键 open module settings  点击加号创建module 选择你要创建的模块 android library
+* 创建完成之后添加依赖， 在  module settings 中 dependcencis 中点加号选择module Library
+添加已创建的模块
