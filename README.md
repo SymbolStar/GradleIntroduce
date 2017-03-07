@@ -22,3 +22,16 @@ include ':app'
 * 右键 open module settings  点击加号创建module 选择你要创建的模块 android library
 * 创建完成之后添加依赖， 在  module settings 中 dependcencis 中点加号选择module Library
 添加已创建的模块
+
+##添加.so链接库
+
+* 将你的app需要集成的百度地图之类的 so动态库 放到libs文件夹下
+* 在build.gradle(Module:app)文件，在android节点下添加
+
+```
+sourceSets {
+    main {
+        jniLibs.srcDirs = ['libs']
+    }
+}
+```
