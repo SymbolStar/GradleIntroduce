@@ -8,11 +8,16 @@
 ## Android Gradle 用法
 
 
+
+
 [Android 官方gradle用户指南（Gradle Plugin User Guide）](http://tools.android.com/tech-docs/new-build-system/user-guide)
 
 
 
 ##Android Gradle 用法
+
+![gradle](https://github.com/ScottFJD/GradleIntroduce/blob/master/img/gradle.png)
+
 
 * 根目录下的 setting.gradle 当中主要用来include 子模块
 include ':app'
